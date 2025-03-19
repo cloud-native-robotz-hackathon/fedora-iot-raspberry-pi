@@ -8,7 +8,22 @@ This is our Fedora IoT for Raspberry pi 4 with an Dexter GoPiGo3 board
 
 * https://github.com/DexterInd/GoPiGo3/blob/master/Hardware/GoPiGo3%20v3.2.0.pdf
 
-### GPIO Setup
+## Research
+
+- Issue from @goetzrieger to run GoPiGo3 on non-Debian: https://github.com/DexterInd/GoPiGo3/issues/320
+- API Spec: https://gopigo3.readthedocs.io/en/master/api-basic/easygopigo3.html#easygopigo3.EasyGoPiGo3.backward
+- python behind: https://github.com/DexterInd/GoPiGo3/blob/master/Software/Python/gopigo3.py#L33
+  - It use move the robots it use spidev: https://pypi.org/project/spidev/
+  - pigpio is only used to set some settings: https://github.com/DexterInd/GoPiGo3/blob/b50cfce3eced2b8d97132b1eef58cd3606ec1025/Software/Python/gopigo3.py#L231-L235
+- Hardware Port description: 
+   - https://gopigo3.readthedocs.io/en/master/api-basic/structure.html#hardware-ports 
+   - https://gopigo3.readthedocs.io/en/master/quickstart.html#getting-familiar-with-the-gopigo3  
+- Containerized pigpiod: https://hub.docker.com/r/zinen2/alpine-pigpiod
+- pigiod in generall: https://abyz.me.uk/rpi/pigpio/pigpiod.html
+
+Infos about new GPIO user space interface: https://sergioprado.blog/new-linux-kernel-gpio-user-space-interface/ 
+
+## GPIO Setup
 
 https://github.com/DexterInd/GoPiGo3/blob/master/Software/Python/gopigo3.py#L231-L235
 
